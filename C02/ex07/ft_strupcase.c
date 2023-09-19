@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+char	*ft_strupcase(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] = str[i] - 32;
+		i++;
+	}
+	return str;
+}
+
+
+int main()
+{
+    char test[] = "Hello, World!";
+    
+    printf("Original: %s\n", test);
+    
+    char *result = ft_strupcase(test);
+    
+    printf("Uppercase: %s\n", result);
+
+    return 0;
+}
