@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akheired <akheired@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 18:09:19 by akheired          #+#    #+#             */
-/*   Updated: 2023/12/04 18:48:06 by akheired         ###   ########.fr       */
+/*   Created: 2023/12/05 09:29:30 by akheired          #+#    #+#             */
+/*   Updated: 2023/12/07 17:29:20 by akheired         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifdef LIBFT_H
-#define LIBFT_H
+#include "libft.h"
 
-int	ft_isalpha(int c);
-int	ft_isdigit(int c);
-int	ft_isalnum(int c);
-int	ft_isascii(int c);
-int	ft_isprint(int c);
+int	ft_atoi(const char *str)
+{
+	int	sig;
+	int	rzl;
 
-#endif
+	sig = 1;
+	rzl = 0;
+	while ((*str >= 9 && *str <= 13) || (*str == 32))
+		str++;
+	if (*str == '-')
+		sig = -1;
+	if (*str == '-' || *str == '+')
+		str++;
+	while (*str >= '0' && *str <= '9')
+	{
+		rzl = rzl * 10 + *str - 48;
+		str++;
+	}
+	return (rzl * sig);
+}
