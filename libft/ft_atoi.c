@@ -6,7 +6,7 @@
 /*   By: akheired <akheired@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 09:29:30 by akheired          #+#    #+#             */
-/*   Updated: 2023/12/07 17:29:20 by akheired         ###   ########.fr       */
+/*   Updated: 2023/12/08 21:34:30 by akheired         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_atoi(const char *str)
 	int	sig;
 	int	rzl;
 
+	// if (str == NULL)
+	// 	return (NULL);
 	sig = 1;
 	rzl = 0;
 	while ((*str >= 9 && *str <= 13) || (*str == 32))

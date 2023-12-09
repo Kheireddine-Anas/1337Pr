@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akheired <akheired@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 18:39:47 by akheired          #+#    #+#             */
-/*   Updated: 2023/12/08 21:39:57 by akheired         ###   ########.fr       */
+/*   Created: 2023/12/08 13:08:34 by akheired          #+#    #+#             */
+/*   Updated: 2023/12/08 19:41:05 by akheired         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stddef.h>
 
-int	ft_isalnum(int c)
+void	ft_bzero(void *s, size_t n)
 {
-	return (ft_isdigit(c) || ft_isalpha(c));
+	//memset(s, 0, n); We can use our memset func too instead of the bottom code.
+	while (n--)
+	{
+		*(unsigned char *)s++ = 0;
+	}
 }
