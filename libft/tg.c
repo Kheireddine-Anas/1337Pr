@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   tg.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akheired <akheired@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 09:29:30 by akheired          #+#    #+#             */
-/*   Updated: 2023/12/09 19:28:31 by akheired         ###   ########.fr       */
+/*   Created: 2023/12/09 19:46:30 by akheired          #+#    #+#             */
+/*   Updated: 2023/12/09 19:50:24 by akheired         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+void	*memmove(void *dst, const void *src, size_t len)
 {
-	int	sig;
-	int	rzl;
+	unsigned char	*hld;
+	int				i;
+	int				j;
 
-	sig = 1;
-	rzl = 0;
-	if (str == NULL)
-		return (NULL);
-	while ((*str >= 9 && *str <= 13) || (*str == 32))
-		str++;
-	if (*str == '-')
-		sig = -1;
-	if (*str == '-' || *str == '+')
-		str++;
-	while (*str >= '0' && *str <= '9')
+	i = 0;
+	j = len;
+	hld = (unsigned char *)src;
+	while (j-- > 0)
 	{
-		rzl = rzl * 10 + *str - 48;
-		str++;
+		ft_memcpy(*(unsigned char *)dst, hld, len);
 	}
-	return (rzl * sig);
+	return (dst);
 }
